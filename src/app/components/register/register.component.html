@@ -35,7 +35,7 @@
     <form class="form" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
       <input
         type="text"
-        name="firstName"
+        name="firstname"
         #firstname="ngModel"
         [(ngModel)]="user.firstname"
         placeholder="Firstname"
@@ -56,7 +56,7 @@
       </div>
       <input
         type="text"
-        name="lastName"
+        name="lastname"
         #lastname="ngModel"
         [(ngModel)]="user.lastname"
         placeholder="Lastname"
