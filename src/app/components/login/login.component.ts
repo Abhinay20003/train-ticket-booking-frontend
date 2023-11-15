@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Login } from 'src/app/models/login';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
@@ -11,7 +12,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private tokenStorage: TokenStorageService) {}
+  constructor(private fb: FormBuilder, private auth: AuthService, private tokenStorage: TokenStorageService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
         next: (data) => {
           this.tokenStorage.saveUser(data);
           alert('Login successful!');
+          this.router.navigateByUrl('/icons');
           console.log(data);
         },
         error: (error) => {
