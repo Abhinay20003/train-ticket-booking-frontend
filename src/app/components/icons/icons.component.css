@@ -1,0 +1,133 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(106, 174, 230);
+    box-shadow: 0 0 10px rgba(242, 239, 239, 0.1);
+  }
+  
+  .logo-and-name {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #101010;
+    margin: 0;
+  }
+  
+  .search-bar {
+    flex: 1;
+    margin: 0 1rem;
+  }
+  
+  .form-control {
+    width: 50%;
+    height: 2rem;
+    border-radius: 999px;
+    border: none;
+    background-color: #f2f2f2;
+    margin-left: 200px;
+    padding: 0 1rem;
+    font-size: 1rem;
+  }
+  
+  
+  .nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem; /* Add space between buttons */
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #292928;
+    background-color: transparent; /* Remove background color */
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    transform: scale(1.05);
+    color: #ffffff; /* Change color on hover */
+    background-color: rgb(15, 145, 238); /* Add background color on hover */
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .logo-and-name {
+      flex: 1;
+    }
+    .search-bar {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    h3 {
+      font-size: 1.2rem;
+    }
+    .nav-link {
+      font-size: 1rem;
+    }
+  }
+.sidebar-social {
+    margin: 0;
+    padding: 0;
+    margin-top:7%;
+}
+
+.sidebar-social ul {
+    margin: 0;
+    padding: 5px;
+}
+
+.sidebar-social li {
+    text-align: center;
+    width: 31.9%;
+    height:60%;
+    margin-bottom: 10px!important;
+    background-color: #fff;
+    border: 1px solid #edecec;
+    display: inline-block;
+    font-size: 10px;
+    border-radius: 30px;
+}
+.sidebar-social a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 16px;
+    color:rgb(15, 15, 16);
+    text-decoration: none;
+}
+
+.sidebar-social i {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    font-size: 35px;
+    color: rgb(9, 145, 230)
+}
+
+.sidebar-social a i.fa-train:hover { color: #f77575; }
+.sidebar-social a i.fa-bus:hover { color:#00ABE3 }
+.sidebar-social a i.fa-mobile:hover { color:#FFD400 }
+.sidebar-social a i.fa-hotel:hover { color:#FF0000 }
+.sidebar-social a i.fa-plane:hover { color:#cb2027 }
+.sidebar-social a i.fa-flickr:hover { color:#FF57AE }
+.sidebar-social a i.fa-list:hover { color:#00ABE3 }
+.sidebar-social a i.fa-home:hover { color:#FF1F25 }
+.sidebar-social a i.fa-credit-card:hover { color:#FF57AE }
