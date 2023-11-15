@@ -10,6 +10,7 @@ import { ServicesComponent } from './components/services/services.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BookingComponent } from './components/booking/booking.component';
+import { SlotbookComponent } from './components/slotbook/slotbook.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BookingComponent } from './components/booking/booking.component';
     LoginComponent,
     RegisterComponent,
     BookingComponent,
+    SlotbookComponent,
   ],
   imports: [
     BrowserModule,
