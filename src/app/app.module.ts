@@ -11,6 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { IconsComponent } from './components/icons/icons.component';
 
+import { AboutComponent } from './components/about/about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
