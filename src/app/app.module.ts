@@ -19,10 +19,7 @@ import { AboutComponent } from './components/about/about.component';
     ServicesComponent,
     LoginComponent,
     RegisterComponent,
-<<<<<<< HEAD
-=======
     AboutComponent,
->>>>>>> f9157de19f1af503d995914108e8c1fa314b5bee
     IconsComponent,
   ],
   imports: [
