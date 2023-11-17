@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { BookingComponent } from './components/booking/booking.component';
 import { SlotbookComponent } from './components/slotbook/slotbook.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { SlotbookComponent } from './components/slotbook/slotbook.component';
     RegisterComponent,
     BookingComponent,
     SlotbookComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
