@@ -10,7 +10,6 @@ import { ServicesComponent } from './components/services/services.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { IconsComponent } from './components/icons/icons.component';
-
 import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
@@ -20,6 +19,10 @@ import { AboutComponent } from './components/about/about.component';
     ServicesComponent,
     LoginComponent,
     RegisterComponent,
+<<<<<<< HEAD
+=======
+    AboutComponent,
+>>>>>>> f9157de19f1af503d995914108e8c1fa314b5bee
     IconsComponent,
   ],
   imports: [

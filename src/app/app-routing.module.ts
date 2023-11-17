@@ -13,9 +13,14 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+<<<<<<< HEAD
 
   { path: 'icons', component: IconsComponent},
   {path:'about',component:AboutComponent}
+=======
+  {path:'about',component:AboutComponent},
+  { path: 'icons', component: IconsComponent}
+>>>>>>> f9157de19f1af503d995914108e8c1fa314b5bee
 
 ];
 
