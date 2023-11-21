@@ -11,6 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { IconsComponent } from './components/icons/icons.component';
 import { AboutComponent } from './components/about/about.component';
+import { CardbookComponent } from './components/cardbook/cardbook.component';
+import { SlotbookComponent } from './components/slotbook/slotbook.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,9 @@ import { AboutComponent } from './components/about/about.component';
     RegisterComponent,
     AboutComponent,
     IconsComponent,
+    CardbookComponent,
+    SlotbookComponent
+   
   ],
   imports: [
     BrowserModule,

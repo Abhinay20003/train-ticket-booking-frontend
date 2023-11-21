@@ -7,6 +7,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { IconsComponent } from './components/icons/icons.component';
 
 import { AboutComponent } from './components/about/about.component';
+import { SlotbookComponent } from './components/slotbook/slotbook.component';
+import { CardbookComponent } from './components/cardbook/cardbook.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
@@ -14,7 +17,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'icons', component: IconsComponent},
-  {path:'about',component:AboutComponent}
+  {path:'about',component:AboutComponent},
+  {path:'slotbook',component:SlotbookComponent},
+  {path:'cardbook',component:CardbookComponent}
+  
 
 
 ];
