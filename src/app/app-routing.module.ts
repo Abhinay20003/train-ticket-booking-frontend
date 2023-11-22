@@ -7,14 +7,25 @@ import { RegisterComponent } from './components/register/register.component';
 import { IconsComponent } from './components/icons/icons.component';
 
 import { AboutComponent } from './components/about/about.component';
+import { SlotbookComponent } from './components/slotbook/slotbook.component';
+import { CardbookComponent } from './components/cardbook/cardbook.component';
+import { SubmitdetComponent } from './components/submitdet/submitdet.component';
+import { PaymentComponent } from './components/payment/payment.component';
+
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'services', component: ServicesComponent},
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
+  { path: 'icons', component: IconsComponent},
   {path:'about',component:AboutComponent},
-  { path: 'icons', component: IconsComponent}
+  {path:'slotbook',component:SlotbookComponent},
+  {path:'cardbook',component:CardbookComponent},
+  {path:'submitdet',component:SubmitdetComponent},
+  {path:'payment',component:PaymentComponent}
+  
+
 
 ];
 
