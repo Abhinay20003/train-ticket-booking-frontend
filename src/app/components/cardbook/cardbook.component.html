@@ -1,1 +1,106 @@
-<p>cardbook works!</p>
+<body>
+
+  <section class="banner" id="top">
+    <div class="container">
+
+      <div id="search-form">
+        <div id="header">
+          <h3 class="header">Book your Train</h3>
+        </div>
+        <br>
+
+        <div class="train" id="trainbox">
+          <div id="train-depart">
+            <div class="forms">
+              <div class=" info-box ">
+                <label for=" ">Source</label>
+                <select id="source" [(ngModel)]="selectedSource" name="selectedSource" (change)="onSourceChange()">
+                  <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                </select>
+
+              </div>
+
+              <div class="info-box " id="arrive-box ">
+                <label for=" ">Destination</label>
+                <select id="destination" [(ngModel)]="selectedDestination" name="selectedDestination">
+                  <option *ngFor="let city of destinationOptions" [value]="city">{{ city }}</option>
+                </select>
+
+
+              </div>
+              <div class=" info-box ">
+                <label for=" ">Classes</label>
+                <select>
+                  <option value="Sleeper">Sleeper(SL)</option>
+                  <option value="Firstclass">First Class(FC)</option>
+                  <option value="Secondclass">Second Class(2S)</option>
+                  <option value="AC-firstclass">AC First Class (1A)</option>
+                  <option value="AC2-Tier">AC 2 Tier (2A)</option>
+                  <option value="AC3-Tier">AC 3 Tier (3A)</option>
+                  <option value="AC3">AC 3 Economy (3E)</option>
+                </select>
+
+              </div>
+              <div class=" info-box ">
+                <label for=" ">Quota</label>
+                <select>
+                  <option value="general">General</option>
+                  <option value="Ladies">Ladies</option>
+                  <option value="Tatkal">Tatkal</option>
+                  <option value="Lower">Lower Berth/Sr. Citizen</option>
+                  <option value="Premium-tatkal">Premium Tatkal</option>
+                  <option value="Duty-pass">Duty Pass</option>
+                  <option value="Disability">Person with disability</option>
+                </select>
+
+              </div>
+            </div>
+          </div>
+          <br>
+          <div id="train-dates ">
+            <div class="info-box ">
+              <label>
+                Departure date
+              </label>
+              <input type="date" id="leave-date" class="form-control" [(ngModel)]="selectedDate" name="selectedDate"
+                [min]="today" />
+
+            </div>
+          </div>
+          <br>
+
+
+          <!-- SEARCH BUTTON -->
+          <div id="train-search ">
+            <div>
+              <button (click)="onSubmit()" [disabled]="!selectedSource || !selectedDestination || !selectedDate"
+                type="submit " class="btn " id="btn1">Search Trains</button>
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div *ngIf="showSelectedInfo">
+
+    <div class="row" style="text-align: center;margin-left: 3%;margin-right: 3%;margin-top: 3%;">
+      <div class="col-sm-6 mb-3 mb-sm-0">
+        <div class="card">
+          <div class="card-header" style="background-color:rgb(158, 193, 194);">
+            <h3>Rajdhani Express(23456)</h3>
+          </div>
+          <div class="card-body">
+            <h3 class="details">{{ selectedSource }} -> {{ selectedDestination }}</h3>
+            <h5 class="arrival-time">Arrival time- 5:00pm</h5>
+            <h5 class="departure-time">Departure time- 3:00am</h5>
+            <h5 class="card-title">Travel Date: {{ selectedDate }}</h5>
+            <a routerLink="/slotbook" class="btn btn-primary" style="margin-left:2px">Book now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

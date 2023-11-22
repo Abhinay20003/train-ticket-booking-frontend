@@ -1,0 +1,29 @@
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">S NO:</th>
+      <th>Source</th>
+      <th>Destination</th>
+      <th>Departure Date</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Phone</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let card of cardData ; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ selectedInfo.selectedSource }}</td>
+      <td>{{ selectedInfo.selectedDestination }}</td>
+      <td>{{ selectedInfo.selectedDate }}</td>
+      <td>{{ card.name }}</td>
+      <td>{{ card.age }}</td>
+      <td>{{ card.phone }}</td>
+      <td>{{ card.gender }}</td>
+    </tr>
+  </tbody>
+  
+</table>
+<button (click)="navigateToPayment()" [disabled]="!isDataAvailable()" style="margin-left: 45%;margin-top: 5%;">Proceed to Payment</button>

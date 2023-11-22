@@ -13,6 +13,8 @@ import { IconsComponent } from './components/icons/icons.component';
 import { AboutComponent } from './components/about/about.component';
 import { CardbookComponent } from './components/cardbook/cardbook.component';
 import { SlotbookComponent } from './components/slotbook/slotbook.component';
+import { SubmitdetComponent } from './components/submitdet/submitdet.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SlotbookComponent } from './components/slotbook/slotbook.component';
     AboutComponent,
     IconsComponent,
     CardbookComponent,
-    SlotbookComponent
+    SlotbookComponent,
+    SubmitdetComponent,
+    PaymentComponent
    
   ],
   imports: [
