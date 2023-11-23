@@ -1,14 +1,28 @@
-<body>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+</head>
 
+<div class="header">
+  <div class="logo-and-name">
+    <a href="#">
+      <img src="./assets/images/railicon.png" alt="Train Logo" class="logo">
+    </a>
+    <h3>Train Ticket Booking</h3>
+  </div>
+  <div class="user-actions">
+    <a class="nav-link">Home</a>
+    <a class="nav-link">My bookings</a>
+    <a class="nav-link">Logout</a>
+  </div>
+</div>
+<body>
   <section class="banner" id="top">
     <div class="container">
 
       <div id="search-form">
-        <div id="header">
-          <h3 class="header">Book your Train</h3>
-        </div>
+        <h3>Search your Train</h3>
         <br>
-
         <div class="train" id="trainbox">
           <div id="train-depart">
             <div class="forms">
@@ -30,27 +44,15 @@
               </div>
               <div class=" info-box ">
                 <label for=" ">Classes</label>
-                <select>
-                  <option value="Sleeper">Sleeper(SL)</option>
-                  <option value="Firstclass">First Class(FC)</option>
-                  <option value="Secondclass">Second Class(2S)</option>
-                  <option value="AC-firstclass">AC First Class (1A)</option>
-                  <option value="AC2-Tier">AC 2 Tier (2A)</option>
-                  <option value="AC3-Tier">AC 3 Tier (3A)</option>
-                  <option value="AC3">AC 3 Economy (3E)</option>
+                <select id="class" [(ngModel)]="selectedClass" name="selectedClass">
+                  <option *ngFor="let class of classes" [value]="class">{{ class }}</option>
                 </select>
 
               </div>
               <div class=" info-box ">
                 <label for=" ">Quota</label>
-                <select>
-                  <option value="general">General</option>
-                  <option value="Ladies">Ladies</option>
-                  <option value="Tatkal">Tatkal</option>
-                  <option value="Lower">Lower Berth/Sr. Citizen</option>
-                  <option value="Premium-tatkal">Premium Tatkal</option>
-                  <option value="Duty-pass">Duty Pass</option>
-                  <option value="Disability">Person with disability</option>
+                <select id="quota" [(ngModel)]="selectedQuota" name="selectedQuota">
+                  <option *ngFor="let quota of quotas" [value]="quota">{{ quota }}</option>
                 </select>
 
               </div>
@@ -84,23 +86,23 @@
 
   </section>
 
-  <div *ngIf="showSelectedInfo">
-
-    <div class="row" style="text-align: center;margin-left: 3%;margin-right: 3%;margin-top: 3%;">
-      <div class="col-sm-6 mb-3 mb-sm-0">
-        <div class="card">
-          <div class="card-header" style="background-color:rgb(158, 193, 194);">
-            <h3>Rajdhani Express(23456)</h3>
-          </div>
-          <div class="card-body">
-            <h3 class="details">{{ selectedSource }} -> {{ selectedDestination }}</h3>
-            <h5 class="arrival-time">Arrival time- 5:00pm</h5>
-            <h5 class="departure-time">Departure time- 3:00am</h5>
-            <h5 class="card-title">Travel Date: {{ selectedDate }}</h5>
-            <a routerLink="/slotbook" class="btn btn-primary" style="margin-left:2px">Book now</a>
+  <div class="customCard">
+    <div *ngFor="let train of trains">
+        <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="card" style="width: 25rem;">
+            <div class="card-header" style="background-color:rgb(158, 193, 194);">
+              <h3>{{ train.trainName }} ({{ train.trainNumber }})</h3>
+            </div>
+            <div class="card-body">
+              <h5 class="details">{{ train.source }} -> {{ train.destination }}</h5>
+              <h6 class="arrival-time">Arrival time: {{ train.arrival }}</h6>
+              <h6 class="departure-time">Departure time: {{ train.departure }}</h6>
+              <h6 class="card-title">Travel Date: {{ train.date }}</h6>
+              <h6 class="price" style="font-weight:bold ;">Ticket Price: {{ train.price }}</h6>
+              <a routerLink="/slotbook" class="btn btn-primary" style="margin-left:2px">Book now</a>
+            </div>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </body>

@@ -3,13 +3,9 @@
     max-height:100% ;
     border: 20px;
     border-color: black;
-    /*background-color: rgb(147, 147, 199);*/
     background-color: rgb(175, 231, 245);
     margin-top: 5%;
     border-radius: 20px;
-}
-.header{
-    margin-left: 32%;
 }
 .forms{
     display: flex;
@@ -35,3 +31,81 @@
 .a btn{
     color:blueviolet
 }
+.price{
+    color: rgb(8, 124, 8)
+}
+
+.customCard {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    margin-right: 20px; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+    background-color: rgb(106, 174, 230);
+    box-shadow: 0 0 10px rgba(242, 239, 239, 0.1);
+  }
+  
+  .logo-and-name {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 40px;
+    margin-right: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #101010;
+    margin: 0;
+  }
+  .nav-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem; 
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #292928;
+    background-color: transparent; 
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    transform: scale(1.05);
+    color: #ffffff; 
+    background-color: rgb(15, 145, 238);
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .logo-and-name {
+      flex: 1;
+    }
+    .search-bar {
+      display: none;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    h3 {
+      font-size: 1.2rem;
+    }
+    .nav-link {
+      font-size: 1rem;
+    }
+  }
