@@ -88,7 +88,6 @@
 
   <div class="customCard">
     <div *ngFor="let train of trains">
-        <div class="col-sm-6 mb-3 mb-sm-0">
           <div class="card" style="width: 25rem;">
             <div class="card-header" style="background-color:rgb(158, 193, 194);">
               <h3>{{ train.trainName }} ({{ train.trainNumber }})</h3>
@@ -102,7 +101,6 @@
               <a (click)="onBookNow(train.trainId)"  class="btn btn-primary" style="margin-left:2px">Book now</a>
             </div>
           </div>
-        </div>
     </div>
   </div>
 </body>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { BookService } from 'src/app/services/book.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TrainSearchService } from 'src/app/services/train-search.service';
+import { TrainDetails } from 'src/app/models/train-details';
 
 @Component({
   selector: 'app-submitdet',
@@ -9,15 +11,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class SubmitdetComponent implements OnInit {
-  // myText!:string;
-  //  startDate:string;
-  //  source:string;
-  //  destination:string;
   trainId: number;
-  constructor(private dataService: BookService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private dataService: BookService, private trainDetails:TrainSearchService ,private router: Router, private route: ActivatedRoute) { }
 
   cardData: any[] = [];
   selectedInfo: any = {};
+  public train: TrainDetails;
 
   ngOnInit(): void {
 
@@ -30,13 +29,23 @@ export class SubmitdetComponent implements OnInit {
       console.log('Captured trainId:', this.trainId);
     });
 
+    this.trainDetails.getTrainById(this.trainId).subscribe(
+      {
+        next: (result) => {
+            this.train = result;
+            console.log("Succesfull!")
+            console.log(this.train);
+          },
+        error: (error: any) => {
+          console.error('Error:', error);
+        }
+      }
+    );
+
     this.dataService.getCardData$().subscribe((data) => {
       this.cardData = data;
     });
 
-    this.dataService.selectedInfo$.subscribe((info) => {
-      this.selectedInfo = info;
-    });
   }
 
   navigateToPayment() {
@@ -44,13 +53,4 @@ export class SubmitdetComponent implements OnInit {
     this.router.navigate(['/payment']);
   }
 
-  isDataAvailable(): boolean {
-    // Check if there is data available
-    return (
-      this.selectedInfo &&
-      this.selectedInfo.selectedSource &&
-      this.selectedInfo.selectedDestination &&
-      this.selectedInfo.selectedDate
-    );
-  }
 }

@@ -4,6 +4,7 @@ import { TrainDetails } from '../models/train-details';
 import { Observable } from 'rxjs';
 import { TrainRequest } from '../models/train-request';
 
+const baseURL = 'http://localhost:8080/api/v1/trainDetails/';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
@@ -21,5 +22,9 @@ export class TrainSearchService {
 
   getAllTrains(): Observable<TrainDetails> {
     return this.http.get<TrainDetails>(`http://localhost:8080/api/v1/trainDetails/getAllTrains`, httpOptions);
+  }
+
+  getTrainById(id: number): Observable<TrainDetails> {
+    return this.http.get<TrainDetails>(baseURL + `getTrainById/${id}`, httpOptions);
   }
 }

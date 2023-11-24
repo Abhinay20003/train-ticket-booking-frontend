@@ -1,1 +1,108 @@
-<h5 style="text-align: center;">Payments Page</h5>
+<div class="header">
+    <div class="logo-and-name">
+      <a href="#">
+       <img src="./assets/images/railicon.png"  alt="Train Logo" class="logo">
+      </a>
+      <h3>Train Ticket Booking</h3>
+    </div>
+    <div class="user-actions">
+          <a class="nav-link" routerLink="/home" >Logout</a>
+    </div>
+</div>
+<body>
+    <div class="container">
+      <h4>Payment Options</h4>
+    <h5>Amount to be paid : ₹ </h5>
+    <form #paymentForm="ngForm" (ngSubmit)="submitForm(paymentForm)">
+      <div class="form-group">
+        <label for="paymentMethod">Select Payment Method:</label>
+        <select class="form-control" name="paymentMethod" [(ngModel)]="selectedPaymentMethod" required>
+          <option value="" disabled>Select Payment Method</option>
+          <option value="{{ PaymentMethod.CreditCard }}">Credit Card</option>
+          <option value="{{ PaymentMethod.DebitCard }}">Debit Card</option>
+          <option value="{{ PaymentMethod.UPI }}">UPI</option>
+          <option value="{{ PaymentMethod.Wallet }}">Wallet</option>
+          <option value="{{ PaymentMethod.NetBanking }}">Net Banking</option>
+        </select>
+      </div>
+      <!-- Credit Card Payment -->
+      <div *ngIf="selectedPaymentMethod === PaymentMethod.CreditCard">
+        <div class="form-group">
+          <input type="text" placeholder="Enter Card Number" class="form-control" name="cardNumber" [(ngModel)]="cardNumber" required>
+        </div>
+        <div class="form-group">
+          <input type="text"  placeholder="Expiry Date" class="form-control" name="expiryDate" [(ngModel)]="expiryDate" required>
+        </div>
+        <div class="form-group">
+          <input type="text"  placeholder="Enter CVV" class="form-control" name="cvv" [(ngModel)]="cvv" required>
+        </div>
+        <div class="form-group" *ngIf="selectedPaymentMethod === PaymentMethod.CreditCard || selectedPaymentMethod === PaymentMethod.DebitCard">
+          <input type="text" placeholder="Enter OTP"class="form-control" name="otp" [(ngModel)]="otp" [disabled]="!otpEnabled">
+        </div>
+      </div>
+
+      <!-- Debit Card Payment -->
+      <div *ngIf="selectedPaymentMethod === PaymentMethod.DebitCard">
+        <div class="form-group">
+          <input type="text" placeholder="Enter Card Number" class="form-control" name="cardNumber" [(ngModel)]="cardNumber" required>
+        </div>
+        <div class="form-group">
+          <input type="text"  placeholder="Expiry Date" class="form-control" name="expiryDate" [(ngModel)]="expiryDate" required>
+        </div>
+        <div class="form-group">
+          <input type="text"  placeholder="Enter CVV" class="form-control" name="cvv" [(ngModel)]="cvv" required>
+        </div>
+        <div class="form-group" *ngIf="selectedPaymentMethod === PaymentMethod.DebitCard || selectedPaymentMethod === PaymentMethod.DebitCard">
+          <input type="text" placeholder="Enter OTP"class="form-control" name="otp" [(ngModel)]="otp" [disabled]="!otpEnabled">
+        </div>
+      </div>
+  <!-- UPI Payment -->
+    <div *ngIf="selectedPaymentMethod === PaymentMethod.UPI">
+    <div class="form-group">
+      <input type="text" placeholder="Enter UPI ID" class="form-control" name="upiId" [(ngModel)]="upiId" required>
+    </div>
+    </div>
+
+    <!-- Wallet Payment -->
+    <div *ngIf="selectedPaymentMethod === PaymentMethod.Wallet">
+    <div class="form-group">
+      <label for="walletType">Select Wallet Type:</label>
+      <select class="form-control"name="walletType" [(ngModel)]="selectedWalletType" required>
+        <option value="" disabled>Select Wallet Type</option>
+        <option value="{{ WalletType.Paytm }}">Paytm</option>
+        <option value="{{ WalletType.PhonePe }}">PhonePe</option>
+        <option value="{{ WalletType.GooglePay }}">Google Pay</option>
+        <option value="{{ WalletType.AmazonPay }}">Amazon Pay</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <input type="number" class="form-control"placeholder="Enter Wallet Number"name="walletNumber" [(ngModel)]="walletNumber" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" placeholder="Enter Wallet PIN"name="walletPin" [(ngModel)]="walletPin" required>
+    </div>
+    </div>
+
+    <!-- Net Banking Payment -->
+    <div *ngIf="selectedPaymentMethod === PaymentMethod.NetBanking">
+    <div class="form-group">
+      <label for="bankName">Select Bank:</label>
+      <select class="form-control" name="bankName" [(ngModel)]="selectedBankName" required>
+        <option value="" disabled>Select Bank</option>
+        <option value="{{ BankName.HDFC }}">HDFC Bank</option>
+        <option value="{{ BankName.ICICI }}">ICICI Bank</option>
+        <option value="{{ BankName.Axis }}">Axis Bank</option>
+        <option value="{{ BankName.SBI }}">State Bank of India</option>
+      </select>
+    </div>
+    <div class="form-group">
+    <input type="text" class="form-control"placeholder="Enter Net Banking ID"ame="netBankingId" [(ngModel)]="netBankingId" required>
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control"placeholder="Enter Password"ame="netBankingPassword" [(ngModel)]="netBankingPassword" required>
+    </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!paymentForm.valid" (click)="showAlert()" routerLink="/ticket-confirm">Pay</button>
+    </form>
+    </div>
+  </body>

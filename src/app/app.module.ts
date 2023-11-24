@@ -15,6 +15,7 @@ import { CardbookComponent } from './components/cardbook/cardbook.component';
 import { SlotbookComponent } from './components/slotbook/slotbook.component';
 import { SubmitdetComponent } from './components/submitdet/submitdet.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { TicketConfirmComponent } from './components/ticket-confirm/ticket-confirm.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PaymentComponent } from './components/payment/payment.component';
     CardbookComponent,
     SlotbookComponent,
     SubmitdetComponent,
-    PaymentComponent
+    PaymentComponent,
+    TicketConfirmComponent
    
   ],
   imports: [

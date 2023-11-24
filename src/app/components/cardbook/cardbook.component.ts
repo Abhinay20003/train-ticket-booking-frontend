@@ -19,7 +19,7 @@ export class CardbookComponent implements OnInit{
   selectedQuota:string;
   destinationOptions: string[];
   ngOnInit(): void {
-    // this.getAllBookings();
+    this.getAllBookings();
   }
 
   public trains;
@@ -54,18 +54,7 @@ export class CardbookComponent implements OnInit{
   }
  
   onSubmit() {
- 
-      this.showSelectedInfo = true;
-      const selectedInfo = {
-        selectedSource: this.selectedSource,
-        selectedDestination: this.selectedDestination,
-        selectedDate: this.selectedDate,
-        selectedClass: this.selectedClass,
-        selectedQuota: this.selectedQuota
-      };
-  
-      this.sharedService.updateSelectedInfo(selectedInfo);
-
+    
       const searchParameters: TrainRequest = {
         source: this.selectedSource,
         destination: this.selectedDestination,

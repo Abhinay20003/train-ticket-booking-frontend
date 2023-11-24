@@ -9,4 +9,5 @@ export class TrainDetails {
 	public date: String;
 	public departure: String;
 	public arrival: String;
+	public price: number;
 }

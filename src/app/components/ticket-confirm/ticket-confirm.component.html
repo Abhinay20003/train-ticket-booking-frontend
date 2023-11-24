@@ -1,0 +1,36 @@
+<div class="header">
+    <div class="logo-and-name">
+        <a href="#">
+            <img src="./assets/images/railicon.png" alt="Train Logo" class="logo">
+        </a>
+        <h3>Train Ticket Booking</h3>
+    </div>
+    <div class="user-actions">
+        <a class="nav-link" routerLink="/home">Logout</a>
+    </div>
+</div>
+
+<body>
+    <div class="container">
+        <h1 style="color:rgb(36, 35, 35);margin-left:130px;">Your ticket will confirm shortly</h1>
+        <p style="color:rgb(63, 62, 62); margin-left: 280px;">Booking ID: {{ bookingId }}</p>
+        <p style="color:rgb(66, 65, 65); margin-left: 250px;">Transaction ID: {{ transactionId }}</p>
+        <div class=" button" style="margin-left:130px">
+            <button (click)="showFeedbackPrompt()">Leave Feedback</button>
+            <button routerLink="/home">Exit</button>
+        </div>
+        <div *ngIf="showPrompt" class="feedback-prompt">
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <select class="form-control" id="rating" [(ngModel)]="feedbackRating">
+                    <option value="1">1 - Poor😭</option>
+                    <option value="2">2 - Fair😥</option>
+                    <option value="3">3 - Good🙂</option>
+                    <option value="4">4 - Very Good😍</option>
+                    <option value="5">5 - Excellent🤩</option>
+                </select>
+            </div>
+            <button (click)="submitFeedback()" routerLink="/home">Submit Feedback</button>
+        </div>
+    </div>
+</body>
