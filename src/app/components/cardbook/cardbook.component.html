@@ -99,7 +99,7 @@
               <h6 class="departure-time">Departure time: {{ train.departure }}</h6>
               <h6 class="card-title">Travel Date: {{ train.date }}</h6>
               <h6 class="price" style="font-weight:bold ;">Ticket Price: {{ train.price }}</h6>
-              <a routerLink="/slotbook" class="btn btn-primary" style="margin-left:2px">Book now</a>
+              <a (click)="onBookNow(train.trainId)"  class="btn btn-primary" style="margin-left:2px">Book now</a>
             </div>
           </div>
         </div>

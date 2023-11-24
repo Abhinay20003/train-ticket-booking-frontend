@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th scope="col">S NO:</th>
+      <th>Train Id</th>
       <th>Source</th>
       <th>Destination</th>
       <th>Departure Date</th>
@@ -15,6 +16,7 @@
   <tbody>
     <tr *ngFor="let card of cardData ; let i = index">
       <th scope="row">{{ i + 1 }}</th>
+      <td>{{ trainId }}</td>
       <td>{{ selectedInfo.selectedSource }}</td>
       <td>{{ selectedInfo.selectedDestination }}</td>
       <td>{{ selectedInfo.selectedDate }}</td>

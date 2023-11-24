@@ -1,5 +1,5 @@
-import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
 
 
@@ -14,23 +14,33 @@ interface Card {
   templateUrl: './slotbook.component.html',
   styleUrls: ['./slotbook.component.css']
 })
-export class SlotbookComponent implements OnInit{
+export class SlotbookComponent implements OnInit {
+  trainId: number;
   //constructor( private router: Router) {}
-constructor(private slotbookService: BookService,private router: Router) {}
-  ngOnInit(): void {}
+  constructor(private slotbookService: BookService, private router: Router, private route: ActivatedRoute) { }
+  ngOnInit(): void {
+    // Subscribe to the route parameters observable
+    this.route.paramMap.subscribe(params => {
+      // Retrieve the trainId from the route parameters
+      this.trainId = +params.get('trainId');
+
+      // Log to the console to confirm that you captured the trainId
+      console.log('Captured trainId:', this.trainId);
+    });
+  }
   selectedNumber: number = 0;
   cards: Card[] = [];
 
-// usage of dynamically cards
+  // usage of dynamically cards
   onNumberChange() {
     if (this.isInvalidNumber()) {
-      
+
       this.selectedNumber = 1;
     }
-    this.cards = this.isInvalidNumber() ? [] : Array.from({ length: this.selectedNumber }, () => ({ name: '', age: '', phone: '' ,gender: ''}));
+    this.cards = this.isInvalidNumber() ? [] : Array.from({ length: this.selectedNumber }, () => ({ name: '', age: '', phone: '', gender: '' }));
   }
 
-//validating the phone numbers
+  //validating the phone numbers
   validatePhone(card: Card) {
     card.phone = card.phone.replace(/[^0-9]/g, '');
   }
@@ -47,30 +57,20 @@ constructor(private slotbookService: BookService,private router: Router) {}
     return this.selectedNumber < 1 || this.selectedNumber > 6;
   }
 
-// submiting card should not be empty
-submitForm() {
-    // if (this.isCardDataEmpty(card)|| !this.isPhoneValid(card)||!this.isNameValid(card)|| !card.gender) {
-    //   console.error('Error: Empty or invalid data. Submission aborted.');
-    //   alert("Fill The Empty fields");
-    //   return;
-    // }
+  // submiting card should not be empty
+  submitForm() {
+    
     if (this.isCardDataEmpty() || this.cards.some((card) => !this.isPhoneValid(card) || !this.isNameValid(card) || !card.gender)) {
       console.error('Error: Empty or invalid data. Submission aborted.');
       alert('Fill The Empty fields or correct the invalid data');
       return;
     }
-    // console.log('Submitted Card:', card);
-    // this.dataService.getCardData$().subscribe((currentCardData) => {
-     
-    //   this.dataService.updateCardData([...currentCardData, card]);});
-    //this.dataService.updateCardData(card);
+  
     this.slotbookService.updateCardData(this.cards);
-    this.router.navigateByUrl('/submitdet');
+    this.router.navigate(['/submitdet', this.trainId]);
 
   }
-  // isCardDataEmpty(card: Card): boolean {
-  //   return !card.name || !card.age || !card.phone;
-  // }
+  
   isCardDataEmpty(): boolean {
     return this.cards.some((card) => !card.name || !card.age || !card.phone);
   }

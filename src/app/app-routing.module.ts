@@ -20,9 +20,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent},
   { path: 'icons', component: IconsComponent},
   {path:'about',component:AboutComponent},
-  {path:'slotbook',component:SlotbookComponent},
+  {path:'slotbook/:trainId',component:SlotbookComponent},
   {path:'cardbook',component:CardbookComponent},
-  {path:'submitdet',component:SubmitdetComponent},
+  {path:'submitdet/:trainId',component:SubmitdetComponent},
   {path:'payment',component:PaymentComponent}
   
 
