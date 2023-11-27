@@ -12,6 +12,7 @@ import { CardbookComponent } from './components/cardbook/cardbook.component';
 import { SubmitdetComponent } from './components/submitdet/submitdet.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { TicketConfirmComponent } from './components/ticket-confirm/ticket-confirm.component';
+import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
 
 
 const routes: Routes = [
@@ -24,8 +25,9 @@ const routes: Routes = [
   { path: 'slotbook/:trainId', component:SlotbookComponent},
   { path: 'cardbook', component:CardbookComponent},
   { path: 'submitdet/:trainId', component:SubmitdetComponent},
-  { path: 'payment', component:PaymentComponent},
-  { path: 'ticket-confirm', component: TicketConfirmComponent}
+  { path: 'payment/:trainId', component:PaymentComponent},
+  { path: 'ticket-confirm', component: TicketConfirmComponent},
+  {path:'mybookings',component:MyBookingsComponent}
 
 
 ];

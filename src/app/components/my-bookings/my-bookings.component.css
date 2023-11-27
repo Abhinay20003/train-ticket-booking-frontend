@@ -1,21 +1,4 @@
-table {
-  width: 90%;
-   margin-top: 1%;
-    margin-left: 5%;
-    margin-right: 2%;
-  }
-  
-  th, td {
-    border: 1px solid #060303;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #333;
-    color: white;
-  }
-  .card {
+.card {
     border: 1px solid #ccc;
     padding: 10px;
     margin-left: 32%;
@@ -103,6 +86,22 @@ table {
       font-size: 1rem;
     }
   }
-
+  table {
+    width: 90%;
+     margin-top: 1%;
+      margin-left: 5%;
+      margin-right: 2%;
+    }
+    
+    th, td {
+      border: 1px solid #060303;
+      padding: 4px;
+      text-align: center;
+    }
+    
+    th {
+      background-color: #333;
+      color: white;
+    }
  
  

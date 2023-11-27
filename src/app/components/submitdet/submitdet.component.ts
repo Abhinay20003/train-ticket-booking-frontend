@@ -49,8 +49,7 @@ export class SubmitdetComponent implements OnInit {
   }
 
   navigateToPayment() {
-
-    this.router.navigate(['/payment']);
+    this.router.navigate(['/payment', this.trainId]);
   }
 
 }

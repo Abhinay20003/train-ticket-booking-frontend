@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 enum PaymentMethod {
@@ -29,7 +29,8 @@ enum BankName {
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.css']
 })
-export class PaymentComponent  {
+export class PaymentComponent {
+
   PaymentMethod = PaymentMethod;
   WalletType = WalletType;
   BankName = BankName;
@@ -53,7 +54,8 @@ export class PaymentComponent  {
     console.log(paymentForm);
   }
 
-  showAlert(){
+  showAlert() {
     alert('Your Transaction is Successful');
+
   }
 }
