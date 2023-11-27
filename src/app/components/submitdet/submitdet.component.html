@@ -11,6 +11,7 @@
       <th>Age</th>
       <th>Phone</th>
       <th>Gender</th>
+      <th>Price</th>
     </tr>
   </thead>
   <tbody>
@@ -24,8 +25,15 @@
       <td>{{ card.age }}</td>
       <td>{{ card.phone }}</td>
       <td>{{ card.gender }}</td>
+      <td>{{ train.price }}</td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr>
+      <th colspan="9">Total Price</th>
+      <td>{{ calculateTotalPrice() }}</td>
+    </tr>
+  </tfoot>
   
 </table>
 <button (click)="navigateToPayment()" style="margin-left: 45%;margin-top: 5%;">Proceed to Payment</button>

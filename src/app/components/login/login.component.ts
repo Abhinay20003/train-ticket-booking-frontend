@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
       this.auth.login(this.user).subscribe({
         next: (data) => {
           this.tokenStorage.saveUser(data);
+          window.sessionStorage.setItem('email', this.user.email);
           alert('Login successful!');
           this.router.navigateByUrl('/icons');
           console.log(data);

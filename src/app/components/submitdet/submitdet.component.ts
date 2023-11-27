@@ -17,6 +17,7 @@ export class SubmitdetComponent implements OnInit {
   cardData: any[] = [];
   selectedInfo: any = {};
   public train: TrainDetails;
+  totalPrice = 0;
 
   ngOnInit(): void {
 
@@ -48,9 +49,24 @@ export class SubmitdetComponent implements OnInit {
 
   }
 
+  
+
   navigateToPayment() {
 
-    this.router.navigate(['/payment']);
+    this.router.navigate(['/payment', this.trainId, this.totalPrice]);
   }
 
+  calculateTotalPrice(): number {
+    let price = 0;
+
+    if (this.train && this.cardData) {
+      // Assuming train has a price property, adjust accordingly if needed
+      const basePrice = this.train.price;
+
+      // Sum up the total price based on the number of cards
+      price = this.cardData.length * basePrice;
+    }
+    this.totalPrice = price;
+    return price;
+  }
 }

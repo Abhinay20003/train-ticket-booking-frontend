@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'slotbook/:trainId', component:SlotbookComponent},
   { path: 'cardbook', component:CardbookComponent},
   { path: 'submitdet/:trainId', component:SubmitdetComponent},
-  { path: 'payment', component:PaymentComponent},
+  { path: 'payment/:trainId/:totalPrice', component:PaymentComponent},
   { path: 'ticket-confirm', component: TicketConfirmComponent}
 
 
