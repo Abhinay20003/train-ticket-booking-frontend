@@ -12,20 +12,22 @@ import { CardbookComponent } from './components/cardbook/cardbook.component';
 import { SubmitdetComponent } from './components/submitdet/submitdet.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { TicketConfirmComponent } from './components/ticket-confirm/ticket-confirm.component';
+import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent},
-  { path: 'services', component: ServicesComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'register', component: RegisterComponent},
-  { path: 'icons', component: IconsComponent},
-  { path: 'about', component:AboutComponent},
-  { path: 'slotbook/:trainId', component:SlotbookComponent},
-  { path: 'cardbook', component:CardbookComponent},
-  { path: 'submitdet/:trainId', component:SubmitdetComponent},
-  { path: 'payment/:trainId/:totalPrice', component:PaymentComponent},
-  { path: 'ticket-confirm', component: TicketConfirmComponent}
+  { path: '', component: HomeComponent },
+  { path: 'services', component: ServicesComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'icons', component: IconsComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'slotbook/:trainId', component: SlotbookComponent },
+  { path: 'cardbook', component: CardbookComponent },
+  { path: 'submitdet/:trainId', component: SubmitdetComponent },
+  { path: 'payment/:trainId/:totalPrice', component: PaymentComponent },
+  { path: 'ticket-confirm', component: TicketConfirmComponent },
+  { path: 'my-bookings', component: MyBookingsComponent }
 
 
 ];

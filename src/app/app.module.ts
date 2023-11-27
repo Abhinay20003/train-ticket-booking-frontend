@@ -16,6 +16,7 @@ import { SlotbookComponent } from './components/slotbook/slotbook.component';
 import { SubmitdetComponent } from './components/submitdet/submitdet.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { TicketConfirmComponent } from './components/ticket-confirm/ticket-confirm.component';
+import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TicketConfirmComponent } from './components/ticket-confirm/ticket-confi
     SlotbookComponent,
     SubmitdetComponent,
     PaymentComponent,
-    TicketConfirmComponent
+    TicketConfirmComponent,
+    MyBookingsComponent
    
   ],
   imports: [
