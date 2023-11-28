@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { TrainDetails } from 'src/app/models/train-details';
 import { TrainRequest } from 'src/app/models/train-request';
 import { BookService } from 'src/app/services/book.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { TrainSearchService } from 'src/app/services/train-search.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class CardbookComponent implements OnInit{
   selectedClass:string;
   selectedQuota:string;
   destinationOptions: string[];
+
   ngOnInit(): void {
     this.getAllBookings();
   }
@@ -31,7 +33,7 @@ export class CardbookComponent implements OnInit{
   today: string; // Property to hold the current date
  
 
-  constructor( private sharedService:BookService, private trainService:TrainSearchService, private router:Router) {
+  constructor( private sharedService:BookService, private trainService:TrainSearchService, private router:Router, private tokenStorageService: TokenStorageService) {
     // Set the initial options for the destination dropdown
     this.destinationOptions = this.cities.slice();
     this.today = new Date().toISOString().split('T')[0];
@@ -85,5 +87,10 @@ export class CardbookComponent implements OnInit{
     console.log('Book now clicked for train with id:', trainId);
     // Example: Navigate to a booking page with the trainId
     this.router.navigate(['/slotbook', trainId]);
+  }
+
+  logout() {
+    this.tokenStorageService.signOut();
+    this.router.navigateByUrl('/login');
   }
 }

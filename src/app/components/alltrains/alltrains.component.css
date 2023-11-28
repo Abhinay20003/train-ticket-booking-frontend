@@ -1,0 +1,74 @@
+.container{
+    width:60%;
+    max-height:100% ;
+    border: 20px;
+    border-color: black;
+    background-color: rgb(175, 231, 245);
+    margin-top: 5%;
+    border-radius: 20px;
+}
+.forms{
+    display: flex;
+    height:70%
+}
+.form-control{
+    width:30%;
+    height:35px;
+}
+.btn {
+     background-color: rgb(76, 76, 230);
+     color:white;
+     margin-left: 30%;
+}
+  .details{
+    color:rgb(6, 6, 240);
+  }
+.btn2{
+    background-color: rgb(76, 76, 230);
+    color:white;
+
+}
+.a btn{
+    color:blueviolet
+}
+.price{
+    color: rgb(8, 124, 8)
+}
+
+.customCard {
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    margin-right: 10px; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem;
+    background-color: rgb(106, 174, 230);
+    box-shadow: 0 0 10px rgba(242, 239, 239, 0.1);
+  }
+  
+  .logo-and-name {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 40px;
+    margin-right: 1rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #101010;
+    margin: 0;
+  }
+ 

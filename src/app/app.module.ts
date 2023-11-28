@@ -17,6 +17,10 @@ import { SubmitdetComponent } from './components/submitdet/submitdet.component';
 import { PaymentComponent } from './components/payment/payment.component';
 import { TicketConfirmComponent } from './components/ticket-confirm/ticket-confirm.component';
 import { MyBookingsComponent } from './components/my-bookings/my-bookings.component';
+import { AdminloginComponent } from './components/adminlogin/adminlogin.component';
+import { AddtrainsComponent } from './components/addtrains/addtrains.component';
+import { AlltrainsComponent } from './components/alltrains/alltrains.component';
+import { AllbookingsComponent } from './components/allbookings/allbookings.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { MyBookingsComponent } from './components/my-bookings/my-bookings.compon
     SubmitdetComponent,
     PaymentComponent,
     TicketConfirmComponent,
-    MyBookingsComponent
+    MyBookingsComponent,
+    AdminloginComponent,
+    AddtrainsComponent,
+    AlltrainsComponent,
+    AllbookingsComponent
    
   ],
   imports: [

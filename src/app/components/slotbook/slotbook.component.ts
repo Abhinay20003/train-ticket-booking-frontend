@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BookService } from 'src/app/services/book.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 
 
 interface Card {
@@ -17,7 +18,7 @@ interface Card {
 export class SlotbookComponent implements OnInit {
   trainId: number;
   //constructor( private router: Router) {}
-  constructor(private slotbookService: BookService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private slotbookService: BookService, private router: Router, private route: ActivatedRoute, private tokenStorageService: TokenStorageService) { }
   ngOnInit(): void {
     // Subscribe to the route parameters observable
     this.route.paramMap.subscribe(params => {
@@ -73,6 +74,11 @@ export class SlotbookComponent implements OnInit {
   
   isCardDataEmpty(): boolean {
     return this.cards.some((card) => !card.name || !card.age || !card.phone);
+  }
+
+  logout() {
+    this.tokenStorageService.signOut();
+    this.router.navigateByUrl('/login');
   }
 
 }

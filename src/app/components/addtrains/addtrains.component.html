@@ -1,0 +1,84 @@
+<body>
+    <section class="banner" id="top">
+        <div class="container">
+            <div id="add-form">
+                <h3>Add Trains</h3>
+                <br>
+                <div class="train" id="trainbox">
+                    <div id="train-depart">
+                        <div class="forms">
+                            <div class="info-box">
+                                <label for=" ">Train Name</label>
+                                <input type="text" class="form-control" [(ngModel)]="selectedtrainName">
+                            </div>
+                            <div class="info-box">
+                                <label for=" ">Train No</label>
+                                <input type="text" class="form-control" [(ngModel)]="selectedtrainNumber">
+                            </div>
+                            <div class="info-box">
+                                <label for=" ">Source</label>
+                                <select id="source" [(ngModel)]="selectedSource" name="selectedSource"
+                                    (change)="onSourceChange()">
+                                    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                                </select>
+
+                            </div>
+
+                            <div class="info-box" id="arrive-box ">
+                                <label for=" ">Destination</label>
+                                <select id="destination" [(ngModel)]="selectedDestination" name="selectedDestination">
+                                    <option *ngFor="let city of destinationOptions" [value]="city">{{ city }}</option>
+                                </select>
+
+
+                            </div>
+                            <div class="info-box">
+                                <label for=" ">Classes</label>
+                                <select id="class" [(ngModel)]="selectedClass" name="selectedClass">
+                                    <option *ngFor="let class of classes" [value]="class">{{ class }}</option>
+                                </select>
+
+                            </div>
+                            <div class="info-box">
+                                <label for=" ">Quota</label>
+                                <select id="quota" [(ngModel)]="selectedQuota" name="selectedQuota">
+                                    <option *ngFor="let quota of quotas" [value]="quota">{{ quota }}</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div id="train-dates">
+                        <div class="info-box">
+                            <label>
+                                Travel date
+                            </label>
+                            <input type="date" id="leave-date" class="form-control" [(ngModel)]="selectedDate"
+                                name="selectedDate" [min]="today" />
+                        </div>
+                    </div>
+                    <br>
+                    <div id="train-dates">
+                        <div class="info-box ">
+                            <label>
+                                Arrival date
+                            </label>
+                            <input type="date" id="arrival-date" class="form-control" [(ngModel)]="selectedDate"
+                                name="selectedDate" [min]="today" />
+                        </div>
+                    </div>
+                    <br>
+                    <div class="info-box">
+                        <label for=" ">Price</label>
+                        <input type="price" class="form-control" [(ngModel)]="selectedPrice" name="selectedPrice">
+                    </div>
+                    <br>
+                    <div id="train-add">
+                        <div>
+                            <button (click)="onSubmit()"
+                                [disabled]="!selectedSource || !selectedDestination || !selectedDate" type="submit "
+                                class="btn " id="btn1">Add New Trains</button>
+                        </div>
+                        <br>
+                    </div>

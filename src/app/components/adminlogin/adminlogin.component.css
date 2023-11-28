@@ -1,0 +1,75 @@
+.wrapper {
+    width: 350px;
+    padding: 1rem 1rem;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 1rem;
+  }
+  
+  .form input {
+    width: 90%;
+    outline: none;
+    border: 1px solid white;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: rgb(207, 200, 200);
+  }
+  
+  .form select {
+    width: 90%;
+    outline: none;
+    border: 1px solid white;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background: rgb(207, 200, 200);
+  }
+  
+  label {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  select:focus {
+    border: 1px solid rgb(151, 150, 150);
+  }
+  
+  input:focus {
+    border: 1px solid rgb(151, 150, 150);
+  }
+  
+  button {
+    font-size: 1rem;
+    margin-top: 20px;
+    padding: 10px 0;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 80%;
+    color: white;
+    cursor: pointer;
+    background: rgb(150, 73, 150);
+  }
+  
+  button:hover {
+    background: rgb(116, 54, 116);
+  }
+  
+  .already {
+    font-size: 0.9rem;
+    margin-top: 1.4rem;
+    color: grey;
+  }
+  
+  .already a {
+    text-decoration: none;
+  }
+  

@@ -6,6 +6,7 @@ import { Passenger } from 'src/app/models/passenger';
 import { TrainDetails } from 'src/app/models/train-details';
 import { BookService } from 'src/app/services/book.service';
 import { BookingServiceService } from 'src/app/services/booking-service.service';
+import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { TrainSearchService } from 'src/app/services/train-search.service';
 
 enum PaymentMethod {
@@ -38,7 +39,7 @@ enum BankName {
 })
 export class PaymentComponent implements OnInit {
 
-  constructor(private dataService: BookService, private trainDetails:TrainSearchService, private bookingService: BookingServiceService ,private router: Router, private route: ActivatedRoute) {}
+  constructor(private dataService: BookService, private trainDetails:TrainSearchService, private bookingService: BookingServiceService ,private router: Router, private route: ActivatedRoute, private tokenStorageService: TokenStorageService) {}
 
   trainId: number;
   totalPrice: number = 0;
@@ -117,6 +118,7 @@ export class PaymentComponent implements OnInit {
       userEmail: window.sessionStorage.getItem('email'),
       trainId: this.trainId,
       price: this.totalPrice,
+      status: 'PENDING',
       passengers: passengers
     } 
 
@@ -134,5 +136,10 @@ export class PaymentComponent implements OnInit {
         }
       }
     );
+  }
+
+  logout() {
+    this.tokenStorageService.signOut();
+    this.router.navigateByUrl('/login');
   }
 }
