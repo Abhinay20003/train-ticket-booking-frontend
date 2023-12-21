@@ -23,4 +23,12 @@ export class AuthService {
   register(user: Register): Observable<any> {
     return this.http.post(baseURL + 'register', user, httpOptions);
   }
+
+  isLoggedIn(): boolean {
+    return !!sessionStorage.getItem('user');
+  }
+
+  getUserDetails(): string | null {
+    return sessionStorage.getItem('user');
+  }
 }

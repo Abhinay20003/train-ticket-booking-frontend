@@ -17,6 +17,9 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   user: Login = new Login();
+
+  successMessage: string = '';
+  errorMessage: string = '';
   
   onSubmit(loginForm: NgForm) {
     if (loginForm.valid) {
@@ -25,13 +28,16 @@ export class LoginComponent implements OnInit {
         next: (data) => {
           this.tokenStorage.saveUser(data);
           window.sessionStorage.setItem('email', this.user.email);
-          alert('Login successful!');
+          window.sessionStorage.setItem('user', data.userName);
+          // alert('Login successful!');
+          this.successMessage = 'Login successful!';
           this.router.navigateByUrl('/icons');
           console.log(data);
         },
         error: (error) => {
           console.log('Error:', error);
-          alert('Login unsuccessful!');
+          // alert('Login unsuccessful!');
+          this.errorMessage = 'Invalid email/password!';
         }
       });
     }

@@ -21,7 +21,7 @@
     <label for="numberSelector">Select Number of Passengers:</label>
     <input type="number" id="numberSelector" [(ngModel)]="selectedNumber" (ngModelChange)="onNumberChange()" min="1"
       max="6" />
-    <div *ngIf="isInvalidNumber()" style="color: red;">Please enter a number 1-6.</div>
+    <div *ngIf="isInvalidNumber()" style="color:rgb(52, 52, 151)">Please enter a number 1-6.</div>
   </div>
 
   <div *ngIf="selectedNumber > 0">
@@ -31,7 +31,7 @@
         <label for="name{{ i }}">Name:</label>
         <input id="name{{ i }}" [(ngModel)]="card.name" />
         <div *ngIf="!isNameValid(card)">
-          <span style="color: rgb(228, 92, 92);">Please enter a valid Name.</span>
+          <span style="color: rgb(52, 52, 151);">Please enter a valid Name.</span>
         </div>
       </div>
       <label for="age{{ i }}">Age:</label>
@@ -46,7 +46,7 @@
           <option value="other">Other</option>
         </select>
         <div *ngIf="!card.gender">
-          <span style="color: rgb(228, 92, 92);">Please select a gender.</span>
+          <span style="color: rgb(52, 52, 151)">Please select a gender.</span>
         </div>
       </div>
       <p></p>
@@ -54,7 +54,7 @@
         <label for="phone{{ i }}">Phone:</label>
         <input id="phone{{ i }}" type="text" [(ngModel)]="card.phone" (input)="validatePhone(card)" pattern="[0-9]*" />
         <div *ngIf="!isPhoneValid(card)">
-          <span style="color: rgb(228, 92, 92);">Please enter a valid 10-digit Indian phone number.</span>
+          <span style="color: rgb(52, 52, 151);">Please enter a valid 10-digit Indian phone number.</span>
         </div>
       </div>
       <p></p>

@@ -36,7 +36,11 @@
       <td>{{ booking.trainDetails.destination }}</td>
       <td>{{ booking.trainDetails.date }} | {{ booking.trainDetails.departure }}</td>
       <td>{{ booking.status }}</td>
-      <td><button type="button" class="btn btn-danger" (click)="onCancel(booking)">Cancel</button></td>
+      <td><button type="button" class="btn btn-danger" (click)="onCancel(booking)"
+          [disabled]="booking.status === 'CANCELLED'">
+          Cancel
+        </button>
+      </td>
   </tbody>
 
 </table>

@@ -118,7 +118,7 @@ export class PaymentComponent implements OnInit {
       userEmail: window.sessionStorage.getItem('email'),
       trainId: this.trainId,
       price: this.totalPrice,
-      status: 'PENDING',
+      status: 'BOOKED',
       passengers: passengers
     } 
 

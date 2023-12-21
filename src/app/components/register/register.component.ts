@@ -21,6 +21,8 @@ export class RegisterComponent implements OnInit{
     email: '',
     password: ''
   };
+
+  errorMessage: string = '';
   
 
   onSubmit(form: NgForm) {
@@ -28,13 +30,14 @@ export class RegisterComponent implements OnInit{
       this.user = form.value;
       this.auth.register(this.user).subscribe({
         next: (data) => {
-          alert('Registration successful!');
+          // alert('Registration successful!');
           console.log(data);
           this.router.navigateByUrl('/login');
         },
         error: (error) => {
           console.log('Error:', error);
-          alert('Registration unsuccessful!');
+          // alert('Registration unsuccessful!');
+          this.errorMessage = 'Registration unsuccessful!';
         }
       });
     }

@@ -22,11 +22,6 @@
             <a class="nav-link" routerLink="/services">Services</a>
           </li>
         </ul>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" routerLink="/login">Login</a>
-            </li>
-          </ul>
       </div>
     </div>
 </nav>
@@ -100,6 +95,7 @@
         Enter valid password
       </div>
       <button>Create Account</button>
+      <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
       <div class="already">
         Already have an account?<a routerLink="/login">Login</a>
       </div>

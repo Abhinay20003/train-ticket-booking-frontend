@@ -56,6 +56,8 @@
         Enter valid password
       </div>
       <button>Login</button>
+      <div *ngIf="successMessage" class="text-success">{{ successMessage }}</div>
+      <div *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</div>
       <div class="already">
         Don't have an account?<a routerLink="/register">SignUp</a>
       </div>
